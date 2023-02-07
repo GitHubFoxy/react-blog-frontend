@@ -12,7 +12,6 @@ export const Home = () => {
   const { posts} = useSelector((state) => state.posts);
 
   const isPostsLoading = posts.status === "loading";
-  const isTagsLoading = tags.status === "loading";
   React.useEffect(() => {
     dispatch(fetchPosts());
   }, []);
