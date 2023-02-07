@@ -4,20 +4,17 @@ import Tab from "@mui/material/Tab";
 import Grid from "@mui/material/Grid";
 import { useDispatch, useSelector } from "react-redux";
 import { Post } from "../components/Post";
-import { TagsBlock } from "../components/TagsBlock";
-import { CommentsBlock } from "../components/CommentsBlock";
-import { fetchPosts, fetchTags } from "../redux/slices/posts";
+import { fetchPosts} from "../redux/slices/posts";
 
 export const Home = () => {
   const dispatch = useDispatch();
   const userData = useSelector((state) => state.auth.data);
-  const { posts, tags } = useSelector((state) => state.posts);
+  const { posts} = useSelector((state) => state.posts);
 
   const isPostsLoading = posts.status === "loading";
   const isTagsLoading = tags.status === "loading";
   React.useEffect(() => {
     dispatch(fetchPosts());
-    dispatch(fetchTags());
   }, []);
 
   return (
