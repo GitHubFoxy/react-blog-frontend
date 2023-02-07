@@ -8,19 +8,20 @@ import "./index.scss";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "./theme";
 import store from "./redux/store.js";
+import { Fragment } from "react";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <>
+  <Fragment>
     <CssBaseline />
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Provider store = {store}>
+        <Provider store={store}>
           <App />
         </Provider>
       </BrowserRouter>
     </ThemeProvider>
-  </>
+  </Fragment>
 );
