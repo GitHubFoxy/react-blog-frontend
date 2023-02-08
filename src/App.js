@@ -5,6 +5,8 @@ import { useDispatch, useSelector} from "react-redux";
 import { Home, FullPost, Registration, AddPost, Login } from "./pages";
 import { fetchAuthMe, selectIsAuth } from "./redux/slices/auth";
 import React from 'react';
+import { Fragment } from "react";
+
 
 
 function App() {
@@ -14,7 +16,7 @@ function App() {
     dispatch(fetchAuthMe());
   },[])
   return (
-    <>
+    <Fragment>
       <Header />
       <Container maxWidth="lg">
         <Routes>
@@ -26,7 +28,7 @@ function App() {
           <Route path='/login' element ={<Login />} />
         </Routes>
       </Container>
-    </>
+    </Fragment>
   );
 }
 
